@@ -3,7 +3,7 @@ import os
 import time
 from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
-from functions.utils import ReadableTime
+from plugins.utils import ReadableTime
 from pyromod import listen
 logging.basicConfig(level = logging.DEBUG,
                      format="%(asctime)s - %(name)s - %(message)s - %(levelname)s")
