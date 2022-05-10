@@ -1,4 +1,4 @@
-
+# :d hahahahhaha
 from pyrogram.emoji import *   
 class Translation (object):   
     DOWNLOAD_SUCCESS = """Dosya İndirilmesi Başarılı!\nGeçen Zaman : {} Saniye."""
