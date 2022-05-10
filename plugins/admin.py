@@ -1,5 +1,6 @@
 import shutil
 import psutil
+import heroku3
 from pyrogram import filters
 from pyrogram.types import (
     Message
@@ -31,7 +32,19 @@ async def status_handler(_, m: Message):
         parse_mode="Markdown",
         quote=True
     )
-
+@Client.on_message(filters.command("restart") & filters.user(Config.OWNER_ID))
+async def restart(_, m: Message):
+    restart_msg = await m.reply_text(text="`İşleniyor...`")
+    await restart_msg.edit("`Yeniden başlatılıyor! Lütfen bekle...`")
+    try:
+        if HEROKU_API_KEY is not None and HEROKU_APP_NAME is not None:
+            heroku_conn = heroku3.from_key(HEROKU_API_KEY)
+            server = heroku_conn.app(HEROKU_APP_NAME)
+            server.restart()
+        else:
+            await restart_msg.edit("`Heroku değişkenlerini ekleyin.`")
+    except Exception as e:
+        await restart_msg.edit(f"**Error:** `{e}`")
 
 @Client.on_message(filters.command("broadcast") & filters.user(Config.OWNER_ID) & filters.reply)
 async def broadcast_in(_, m: Message):
