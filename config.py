@@ -8,7 +8,7 @@ class Config:
     API_HASH = os.environ.get('API_HASH', None)
     HEROKU_APP_NAME = os.environ.get('HEROKU_APP_NAME', None)
     HEROKU_API_KEY = os.environ.get('HEROKU_API_KEY', None)
-
+    
 
     #comma seperated user id of users who are allowed to use
 
@@ -24,3 +24,4 @@ class Config:
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-100"))
     BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", "False"))
     DOWNLOAD_LOCATION = "./DOWNLOADS"
+    SEND_LOGS_WHEN_DYING = str(os.environ.get("SEND_LOGS_WHEN_DYING", "True")).lower() == 'true' 
