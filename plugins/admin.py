@@ -11,6 +11,11 @@ from database.database import db
 from helper_func.progress_bar import humanbytes
 from plugins.broadcast import broadcast_handler
 
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[logging.FileHandler('log.txt'), logging.StreamHandler()],
+    level=logging.INFO)
+LOGGER = logging.getLogger(__name__)
+
 
 @Client.on_message(filters.command("status") & filters.user(Config.OWNER_ID))
 async def status_handler(_, m: Message):
