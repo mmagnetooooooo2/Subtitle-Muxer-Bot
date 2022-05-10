@@ -8,6 +8,7 @@ aiohttp
 beautifulsoup4
 hachoir
 heroku3
+pyromod
 numpy
 Pillow
 olefile
