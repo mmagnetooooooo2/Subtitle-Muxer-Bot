@@ -1,12 +1,12 @@
 import os
 
 from plugins.script import Script
-from pyrogram import Client as mmagneto
+from pyrogram import Client as Mmagneto
 from pyrogram.types import InlineKeyboardMarkup
 from pyrogram.types import InlineKeyboardButton
 
 
-@mmagneto.on_callback_query()
+@Mmagneto.on_callback_query()
 async def button(bot, update):
     if update.data == "home":
         await update.message.edit_text(
