@@ -6,8 +6,8 @@ class Config:
     BOT_TOKEN = os.environ.get('BOT_TOKEN', None)
     APP_ID = os.environ.get('APP_ID', None)
     API_HASH = os.environ.get('API_HASH', None)
-    HEROKU_APP_NAME = environ.get('HEROKU_APP_NAME', None)
-    HEROKU_API_KEY = environ.get('HEROKU_API_KEY', None)
+    HEROKU_APP_NAME = os.environ.get('HEROKU_APP_NAME', None)
+    HEROKU_API_KEY = os.environ.get('HEROKU_API_KEY', None)
 
 
     #comma seperated user id of users who are allowed to use
