@@ -45,7 +45,7 @@ if __name__ == '__main__':
         plugins = plugins
     )
 async def start(self):
-        if not os.path.isdir(Config.DOWNLOAD_DIR): os.makedirs(Config.DOWNLOAD_DIR)
+        if not os.path.isdir(Config.DOWNLOAD_LOCATION): os.makedirs(Config.DOWNLOAD_LOCATION)
         await super().start()
         me = await self.get_me()
         self.username = '@' + me.username
