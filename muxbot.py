@@ -57,7 +57,7 @@ async def start(self):
             except Exception as t:
                 LOGGER.error(str(t))
 
-    async def stop(self, *args):
+async def stop(self, *args):
         if Config.OWNER_ID != 0:
             texto = f"Son nefesimi verdim.\nÖldüğümde yaşım: {ReadableTime(time.time() - botStartTime)}"
             try:
