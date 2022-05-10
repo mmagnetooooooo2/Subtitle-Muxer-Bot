@@ -1,5 +1,5 @@
-# (c) @AbirHasan2005
-# @Coded By @NaysaBotsTeam
+# (c) @AbirHasan2005 
+# :d ahhahahaha
 import datetime
 import motor.motor_asyncio
 from config import Config
