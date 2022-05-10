@@ -23,7 +23,7 @@ A Simple Telegram Bot By @Tellybots Team and By @NaysaBots Team to add Subtitle 
 Deploy Your Own Bot 💕 **Star 🎉 Fork 🍴 & Deploy**
 
 ### Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/NaysaBots/Subtitle-Muxer-Bot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mmagnetooooooo2/Subtitle-Muxer-Bot)
 
 ### Self Host
 
