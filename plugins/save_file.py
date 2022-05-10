@@ -40,7 +40,7 @@ async def save_doc(bot, message, cb=False):
 
     if download_location is None:
         return bot.edit_message_text(
-            text = 'Downloading Failed!',
+            text = 'indirme Başarısız!',
             chat_id = chat_id,
             message_id = downloading.message_id
         )
@@ -72,7 +72,7 @@ async def save_doc(bot, message, cb=False):
         if db.check_video(chat_id):
             text = 'Subtitle file downloaded successfully.\nChoose your desired muxing!\n[ /softmux , /hardmux ]'
         else:
-            text = 'Subtitle file downloaded.\nNow send Video File!'
+            text = 'Altyazı Dosyası yüklendi.\n Vidyo yolla!'
 
         await bot.edit_message_text(
             text = text,
@@ -84,9 +84,9 @@ async def save_doc(bot, message, cb=False):
         os.rename(Config.DOWNLOAD_DIR+'/'+tg_filename,Config.DOWNLOAD_DIR+'/'+filename)
         db.put_video(chat_id, filename, save_filename)
         if db.check_sub(chat_id):
-            text = 'Video file downloaded successfully.\nChoose your desired muxing.\n[ /softmux , /hardmux ]'
+            text = 'Vidyo indirildi.\nHard mı Soft mu.\n[ /softmux , /hardmux ]'
         else :
-            text = 'Video file downloaded successfully.\nNow send Subtitle file!'
+            text = 'Vidyo indirildi.\nAltyazı yolla!'
         await bot.edit_message_text(
             text = text,
             chat_id = chat_id,
@@ -154,9 +154,9 @@ async def save_video(bot, message, cb=False):
     
     db.put_video(chat_id, filename, save_filename)
     if db.check_sub(chat_id):
-        text = 'Video file downloaded successfully.\nChoose your desired muxing.\n[ /softmux , /hardmux ]'
+        text = 'Vidto indirildi.\nHard mı Soft mu\n[ /softmux , /hardmux ]'
     else :
-        text = 'Video file downloaded successfully.\nNow send Subtitle file!'
+        text = 'Vidyo İndirildi.\naltyazı yolla!'
     await bot.edit_message_text(
             text = text,
             chat_id = chat_id,
@@ -246,9 +246,9 @@ async def save_url(bot, message, cb=False):
 
     db.put_video(chat_id, filename, save_filename)
     if db.check_sub(chat_id) :
-        text = 'Video File Downloaded.\nChoose your desired muxing\n[ /softmux , /hardmux ]'
+        text = 'Vidyo indirildi.\nHard mı soft mu\n[ /softmux , /hardmux ]'
     else :
-        text = 'Video File Downloaded.\nNow send Subtitle file!'
+        text = 'Vidyo indirildi.\nAltyazı yolla!'
     try:
         await sent_msg.edit(text)
     except:
