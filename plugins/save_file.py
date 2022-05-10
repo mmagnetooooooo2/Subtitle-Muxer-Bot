@@ -1,6 +1,6 @@
 
 import time
-#© @Tellybots
+#© :d hahahahah
 
 
 import time
