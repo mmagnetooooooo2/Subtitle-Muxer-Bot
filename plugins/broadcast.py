@@ -11,6 +11,11 @@ from database.database import db
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[logging.FileHandler('log.txt'), logging.StreamHandler()],
+    level=logging.INFO)
+LOGGER = logging.getLogger(__name__)
+
 broadcast_ids = {}
 
 
