@@ -1,3 +1,4 @@
+# :d hahhaha
 import shutil
 import psutil
 import heroku3
@@ -28,12 +29,12 @@ async def status_handler(_, m: Message):
     disk_usage = psutil.disk_usage('/').percent
     total_users = await db.total_users_count()
     await m.reply_text(
-        text=f"**Total Disk Space:** {total} \n"
-             f"**Used Space:** {used}({disk_usage}%) \n"
-             f"**Free Space:** {free} \n"
-             f"**CPU Usage:** {cpu_usage}% \n"
-             f"**RAM Usage:** {ram_usage}%\n\n"
-             f"**Total Users in DB:** `{total_users}`",
+        text=f"**Toplam alan:** {total} \n"
+             f"**Kullanılan alan:** {used}({disk_usage}%) \n"
+             f"**Boş alan:** {free} \n"
+             f"**Cpu kullanımı:** {cpu_usage}% \n"
+             f"**Ram kullanımı:** {ram_usage}%\n\n"
+             f"**Tüm kullanıcılar:** `{total_users}`",
         parse_mode="Markdown",
         quote=True
     )
@@ -54,3 +55,5 @@ async def restart(_, m: Message):
 @Client.on_message(filters.command("broadcast") & filters.user(Config.OWNER_ID) & filters.reply)
 async def broadcast_in(_, m: Message):
     await broadcast_handler(m)
+
+# @Client.on_message(filters.command("log") & filters.user(Config.OWNER_ID))
