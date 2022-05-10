@@ -28,7 +28,7 @@ async def softmux(client, message):
         await client.send_message(chat_id, text)
         return
 
-    text = 'Your File is Being Soft Subbed. This should be done in few seconds!'
+    text = 'Soft sub yapıyom bekle!'
     sent_msg = await client.send_message(chat_id, text)
 
     softmux_filename = await softmux_vid(og_vid_filename, og_sub_filename, sent_msg)
@@ -44,7 +44,7 @@ async def softmux(client, message):
                 chat_id,
                 progress = progress_bar, 
                 progress_args = (
-                    'Uploading your File!',
+                    'Dosyanı yüklüyom!',
                     sent_msg,
                     start_time
                     ), 
@@ -82,14 +82,14 @@ async def hardmux(bot, message, cb=False):
     og_sub_filename = db.get_sub_filename(chat_id)
     text = ''
     if not og_vid_filename :
-        text += 'First send a Video File\n'
+        text += 'Önce vidyo gönder\n'
     if not og_sub_filename :
-        text += 'Send a Subtitle File!'
+        text += 'Alt Yazı da gönder!'
     
     if not (og_sub_filename or og_vid_filename) :
         return await bot.send_message(chat_id, text)
     
-    text = 'Your File is Being Hard Subbed. This might take a long time!'
+    text = 'Hard Sub yapıyom bekle!'
     sent_msg = await bot.send_message(chat_id, text)
 
     hardmux_filename = await hardmux_vid(og_vid_filename, og_sub_filename, sent_msg)
@@ -107,14 +107,14 @@ async def hardmux(bot, message, cb=False):
                 chat_id,
                 progress = progress_bar, 
                 progress_args = (
-                    'Uploading your File!',
+                    'Dosya yükleniyor!',
                     sent_msg,
                     start_time
                     ), 
                 video = os.path.join(Config.DOWNLOAD_DIR, final_filename),
                 caption = final_filename
                 )
-        text = 'File Successfully Uploaded!\nTotal Time taken : {} seconds'.format(round(time.time()-start_time))
+        text = 'Dosya yüklendi\nTotal geçen süre : {} Saniye'.format(round(time.time()-start_time))
         await sent_msg.edit(text)
     except Exception as e:
         print(e)
